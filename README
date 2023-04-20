@@ -1,0 +1,8 @@
+The experiments directory contains the code for the array sum example.
+The MarkerPinTool directory contains the implementation for the PinTool used to collect the marker traces.
+The MiBench directory contains the benchmarks.
+The PatternGenerator_attempt directory contains the failed attempt to extract patterns out of code using theoretic tools.
+The simulator directory contains the code for the simulator.
+The trace_analysis directory contains the scripts to plot the traces, extract the patterns and test the patterns.
+The traces directory contains the extracted traces.
+marker.h is the implementation of MarkerAPI.

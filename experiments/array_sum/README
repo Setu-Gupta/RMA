@@ -1,0 +1,7 @@
+How to compile:
+        * g++ -fopenmp -O3 array_sum.cpp -o unopt
+        * g++ -fopenmp -O3 array_sum_opt.cpp -o opt
+How to run:
+        * ./run.sh
+How to get statistics:
+        * python3 get_mean_median.py log
