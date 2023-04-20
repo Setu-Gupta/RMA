@@ -1,0 +1,3 @@
+Build Instructions:
+        $ mkdir obj-intel64
+        $ make obj-intel64/markertrace.so
