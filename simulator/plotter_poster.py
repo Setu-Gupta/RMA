@@ -32,12 +32,12 @@ with open(sys.argv[1], 'r') as results:
 all_labels = names + names_RMA + name_best
 all_values = values + values_RMA + value_best
 all_label_positions = np.arange(len(all_labels))
-plt.title("Misses per kilo instructions (MPKI) for different branch predictors", fontsize=22)
-plt.xlabel("MPKI", fontsize=22)
-plt.ylabel("Configurations", fontsize=22)
+plt.title("Misses per kilo instructions (MPKI) for different Branch Predictors", fontsize=24)
+plt.xlabel("MPKI", fontsize=24)
+plt.ylabel("Configurations", fontsize=24)
 plt.barh(all_label_positions[:len(names)], values, color='r')
 plt.barh(all_label_positions[len(names):len(names) + len(names_RMA)], values_RMA, color='b')
 plt.barh(all_label_positions[len(names) + len(names_RMA):], value_best, color='g')
-plt.yticks(all_label_positions, labels=all_labels, fontsize=18)
-plt.xticks(fontsize=18)
+plt.yticks(all_label_positions, labels=all_labels, fontsize=20)
+plt.xticks(fontsize=20)
 plt.show()

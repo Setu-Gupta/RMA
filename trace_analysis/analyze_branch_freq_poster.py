@@ -36,14 +36,14 @@ with open(sys.argv[1], 'r') as tracefile:
                     last_branch_status = line[1]
         current_step += 1
 
-plt.title("Branch streams", fontsize=22)
+plt.title("Branch streams", fontsize=24)
 plt.scatter(not_taken_stream_steps, not_taken_stream_points, marker='.', c='r', label="Not Taken branches")
 plt.scatter(taken_stream_steps, taken_stream_points, marker='.', c='b', label="Taken branches")
-plt.xticks(fontsize=18)
-plt.yticks(fontsize=18)
-plt.legend(fontsize=18)
-plt.xlabel("Time steps", fontsize=22)
-plt.ylabel("Length of streams", fontsize=22)
+plt.xticks(fontsize=20)
+plt.yticks(fontsize=20)
+plt.legend(fontsize=20)
+plt.xlabel("Time steps", fontsize=24)
+plt.ylabel("Length of streams", fontsize=24)
 plt.grid()
 plt.autoscale(enable=True, axis='x', tight=True)
 plt.show()
