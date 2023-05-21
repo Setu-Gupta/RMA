@@ -90,12 +90,12 @@ with open(sys.argv[1], 'r') as trace_file:
             BP3.update(marker)
             BP4.update(marker)
 
-mpki1 = (BP1_miss/total_branches) * 1000
-mpki2 = (BP2_miss/total_branches) * 1000
-mpki3 = (BP3_miss/total_branches) * 1000
-mpki4 = (BP4_miss/total_branches) * 1000
-mpki5 = (BP4_miss/total_branches) * 1000
-mpki6 = (BP4_miss/total_branches) * 1000
+mpki1 = (BP1_miss/total_branches) * 100
+mpki2 = (BP2_miss/total_branches) * 100
+mpki3 = (BP3_miss/total_branches) * 100
+mpki4 = (BP4_miss/total_branches) * 100
+mpki5 = (BP4_miss/total_branches) * 100
+mpki6 = (BP4_miss/total_branches) * 100
 
 print("MPKI for MarkerBP with default taken branch:", mpki1)
 print("MPKI for MarkerBP with default not taken branch:", mpki2)

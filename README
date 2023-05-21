@@ -1,8 +1,26 @@
-The experiments directory contains the code for the array sum example.
 The MarkerPinTool directory contains the implementation for the PinTool used to collect the marker traces.
 The MiBench directory contains the benchmarks.
-The PatternGenerator_attempt directory contains the failed attempt to extract patterns out of code using theoretic tools.
 The simulator directory contains the code for the simulator.
 The trace_analysis directory contains the scripts to plot the traces, extract the patterns and test the patterns.
 The traces directory contains the extracted traces.
 marker.h is the implementation of MarkerAPI.
+
+How to reproduce the results:
+        * The annotated codes which use MarkerAPI are already available in susan_annotated
+        * You can compile the annotated code for susan directly with GCC
+        * Once the code is compiled, install Intel Pin
+        * Install MarkerPinTool by copying the directory to source/tools
+        * Similarily install MarkerBranchRatio as well
+        * Run the annotated susan code with MarkerPinTool to get the raw log file
+        * The log files obtained by us are present in the traces directory
+        * Once the log files are obtained, the traces can be plotted using the python scripts in trace_analysis as shown below
+                $ python3 plot_trace_poster.py ../traces/full_trace.out.basicmath_small 0 6131163
+        * The patterns can be extracted by using the get_pattern scripy
+                $ python3 get_pattern.py ../traces/full_trace.out.susan_principle_small_3 0 21652 0.02 20 1.0 10 0.05 > patterns
+        * The patterns extracted by us are present in trace_analysis/patterns
+        * Run the simulator by passing the trace file and the extracted patterns to the simulateRMA script
+                $ python3 simulateRMA.py ../traces/full_trace.out.susan_principle_small_3 ../trace_analysis/patterns > results
+        * The results obtained by us are stored in simulator/results file. Note that the results display MPKI which is the ratio
+          of incorrect predictions and the total predictions, i.e. it is the misprediction rate.
+        * Use the various scripts present in the simulator directory to generate the plots used by us in the paper.
+
